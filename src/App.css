@@ -260,3 +260,24 @@ select {
   .note {
     width: 100%;
   }
+
+  .note-content h1, .note-content h2, .note-content h3 {
+    margin: 0.5em 0;
+  }
+  
+  .note-content ul, .note-content ol {
+    padding-left: 20px;
+  }
+  
+  .note-content code {
+    background-color: #f5f5f5;
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+  }
+  
+  .note-content pre {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 4px;
+    overflow-x: auto;
+  }
