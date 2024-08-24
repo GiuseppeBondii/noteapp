@@ -270,7 +270,8 @@ select {
   }
   
   .note-content code {
-    background-color: #f5f5f5;
+    background-color: #343131;
+    color: rgb(220, 100, 100);
     padding: 0.2em 0.4em;
     border-radius: 4px;
   }
