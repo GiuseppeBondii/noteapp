@@ -1,3 +1,4 @@
+// App.js
 import React, { useState, useEffect } from 'react';
 import NoteForm from './NoteForm';
 import NoteList from './NoteList';
@@ -17,21 +18,28 @@ const App = () => {
 
   const categories = ['Tutte', 'Lavoro', 'Personale', 'Studio', 'Altro'];
 
+  // Save notes to localStorage whenever notes change
   useEffect(() => {
     localStorage.setItem('notes', JSON.stringify(notes));
   }, [notes]);
 
+  // Handle adding a new note
   const addNote = (note) => {
-    note.id = new Date().getTime();
-    note.createdAt = new Date().toISOString(); // Salva come stringa ISO
-    note.updatedAt = new Date().toISOString();
-    setNotes([...notes, note]);
+    const newNote = {
+      ...note,
+      id: new Date().getTime(),
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    };
+    setNotes((prevNotes) => [...prevNotes, newNote]);
   };
 
+  // Handle deleting a note by ID
   const deleteNote = (id) => {
-    setNotes(notes.filter((note) => note.id !== id));
+    setNotes((prevNotes) => prevNotes.filter((note) => note.id !== id));
   };
 
+  // Handle duplicating a note by ID
   const duplicateNote = (id) => {
     const noteToDuplicate = notes.find((note) => note.id === id);
     if (noteToDuplicate) {
@@ -41,25 +49,38 @@ const App = () => {
         createdAt: new Date().toISOString(),
         updatedAt: new Date().toISOString(),
       };
-      setNotes([...notes, duplicatedNote]);
+      setNotes((prevNotes) => [...prevNotes, duplicatedNote]);
     }
   };
 
-  const handleCopy = () => {
-    alert('Contenuto copiato negli appunti!');
-    // Implementa la logica per copiare il contenuto negli appunti
+  // Handle copying the content of a note
+  const handleCopy = (content) => {
+    navigator.clipboard.writeText(content)
+      .then(() => alert('Contenuto copiato negli appunti!'))
+      .catch((err) => alert('Errore nella copia del contenuto:', err));
   };
 
+  // Handle saving updates to an existing note
   const saveNote = (updatedNote) => {
-    updatedNote.updatedAt = new Date().toISOString(); // Aggiorna il timestamp
-    setNotes(notes.map((note) => (note.id === updatedNote.id ? updatedNote : note)));
-    setIsDrawerOpen(false);
-    setCurrentNote(null); // Resetta la nota corrente
+    updatedNote.updatedAt = new Date().toISOString();
+    setNotes((prevNotes) =>
+      prevNotes.map((note) =>
+        note.id === updatedNote.id ? updatedNote : note
+      )
+    );
+    closeDrawer();
   };
 
+  // Handle opening the drawer for editing a note
   const handleEdit = (note) => {
     setCurrentNote(note);
     setIsDrawerOpen(true);
+  };
+
+  // Handle closing the drawer and resetting the current note
+  const closeDrawer = () => {
+    setIsDrawerOpen(false);
+    setCurrentNote(null);
   };
 
   return (
@@ -71,10 +92,15 @@ const App = () => {
           <button onClick={() => setSortType('date')}>Ordina per Data</button>
           <button onClick={() => setSortType('length')}>Ordina per Lunghezza</button>
         </div>
-        <label style={{color:'black'}}>Filtra per categorie: </label>
-        <select onChange={(e) => setSelectedCategory(e.target.value)} value={selectedCategory}>
-          {categories.map(cat => (
-            <option key={cat} value={cat}>{cat}</option>
+        <label style={{ color: 'black' }}>Filtra per categorie: </label>
+        <select
+          onChange={(e) => setSelectedCategory(e.target.value)}
+          value={selectedCategory}
+        >
+          {categories.map((cat) => (
+            <option key={cat} value={cat}>
+              {cat}
+            </option>
           ))}
         </select>
       </div>
@@ -84,16 +110,13 @@ const App = () => {
         onDuplicate={duplicateNote}
         onCopy={handleCopy}
         onEdit={handleEdit}
-        selectedCategory={selectedCategory} // Passa selectedCategory
-        sortType={sortType} // Passa sortType
+        selectedCategory={selectedCategory}
+        sortType={sortType}
       />
       <Drawer
         isOpen={isDrawerOpen}
         note={currentNote}
-        onClose={() => {
-          setIsDrawerOpen(false);
-          setCurrentNote(null);
-        }}
+        onClose={closeDrawer}
         onSave={saveNote}
       />
     </div>

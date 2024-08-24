@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 const NoteForm = ({ onSave }) => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
-  const [color, setColor] = useState('#3d348b'); // Colore predefinito
-  const [category, setCategory] = useState('Lavoro'); // Categoria predefinita
+  const [color, setColor] = useState('#3d348b');
+  const [category, setCategory] = useState('Lavoro');
 
   const colors = ['#3d348b', '#7678ed', '#f7b801', '#f18701', '#f35b04'];
   const categories = ['Lavoro', 'Personale', 'Studio', 'Altro'];

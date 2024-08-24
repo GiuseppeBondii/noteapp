@@ -1,3 +1,4 @@
+// Note.js
 import React, { useState } from 'react';
 
 const Note = ({ note, onDelete, onDuplicate, onCopy, onEdit }) => {
@@ -8,22 +9,25 @@ const Note = ({ note, onDelete, onDuplicate, onCopy, onEdit }) => {
     setIsExpanded(!isExpanded);
   };
 
+  // Assicura che note.content sia una stringa
+  const content = typeof note.content === 'string' ? note.content : '';
+  
   const displayContent = isExpanded
-    ? note.content
-    : `${note.content.substring(0, previewLength)}${
-        note.content.length > previewLength ? '...' : ''
+    ? content
+    : `${content.substring(0, previewLength)}${
+        content.length > previewLength ? '...' : ''
       }`;
 
   return (
     <div className="note" style={{ backgroundColor: note.color }}>
       <h3>{note.title}</h3>
       <p>{displayContent}</p>
-      {note.content.length > previewLength && (
+      {content.length > previewLength && (
         <button onClick={handleExpand}>
           {isExpanded ? 'Mostra meno' : 'Mostra di più'}
         </button>
       )}
-      <button onClick={() => onCopy(note.content)}>Copia</button>
+      <button onClick={() => onCopy(content)}>Copia</button>
       <button onClick={() => onDuplicate(note.id)}>Duplica</button>
       <button onClick={() => onDelete(note.id)}>Elimina</button>
       <button onClick={() => onEdit(note)}>Modifica</button>

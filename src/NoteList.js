@@ -2,7 +2,6 @@ import React from 'react';
 import Note from './Note';
 
 const NoteList = ({ notes, onDelete, onDuplicate, onCopy, onEdit, selectedCategory, sortType }) => {
-
   const filteredNotes = selectedCategory === 'Tutte'
     ? notes
     : notes.filter((note) => note.category === selectedCategory);
@@ -20,19 +19,17 @@ const NoteList = ({ notes, onDelete, onDuplicate, onCopy, onEdit, selectedCatego
   });
 
   return (
-    <div>
-      <div className="note-list">
-        {sortedNotes.map((note) => (
-          <Note
-            key={note.id}
-            note={note}
-            onDelete={onDelete}
-            onDuplicate={onDuplicate}
-            onCopy={onCopy}
-            onEdit={onEdit} // Passa il metodo onEdit a Note
-          />
-        ))}
-      </div>
+    <div className="note-list">
+      {sortedNotes.map((note) => (
+        <Note
+          key={note.id}
+          note={note}
+          onDelete={onDelete}
+          onDuplicate={onDuplicate}
+          onCopy={onCopy}
+          onEdit={onEdit}
+        />
+      ))}
     </div>
   );
 };
