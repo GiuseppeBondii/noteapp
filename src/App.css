@@ -1,0 +1,262 @@
+/* Stile generale */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #EDEDED;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container principale */
+.App {
+  padding: 20px;
+  background-color: #EDEDED;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Note list container */
+.note-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20%, 3fr)); /* Griglia più flessibile */
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 20px;
+  box-sizing: border-box;
+}
+
+/* Stile per ogni nota */
+.note {
+  color: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+}
+
+.note h3 {
+  font-size: 1.5rem;
+  margin: 0 0 10px 0;
+}
+
+.note p {
+  font-size: 0.9rem;
+  margin: 5px 0;
+}
+
+/* Bottoni generici */
+button {
+  background-color: #2C2C2E;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+  align-self: baseline;
+}
+
+button:hover {
+  background-color: #444;
+}
+
+button[type="submit"] {
+  width: 100%;
+  background-color: #3d348b;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+button[type="submit"]:hover {
+  background-color: #7678ed;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+/* Form */
+form {
+  background-color: #1C1C1E;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 100%; /* Fai in modo che il form occupi l'altezza completa */
+  max-width: 600px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Stile per input e textarea */
+.note-input, textarea {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  background-color: #2C2C2E;
+  color: white;
+  box-sizing: border-box;
+}
+
+textarea {
+  height: calc(100vh - 300px); /* Altezza dinamica per la textarea */
+  resize: none; /* Impedisce il ridimensionamento manuale della textarea */
+}
+
+/* Placeholder */
+input::placeholder,
+textarea::placeholder {
+  color: #8E8E93;
+}
+
+/* Label */
+label {
+  color: #1C1C1E;
+  margin-left: 10px;
+  margin-top: 5%;
+}
+
+/* Selettore di colore */
+.color-picker {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.color-swatch {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.3s ease;
+}
+
+.color-swatch.selected {
+  border: 2px solid white;
+}
+
+/* Container per i bottoni di ordinamento e il filtro */
+.sort-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 20px; /* Spazio per allineare meglio con il filtro */
+  margin-bottom: 20px;
+}
+
+.sort-buttons button {
+  background-color: #3d348b;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.sort-buttons button:hover {
+  background-color: #7678ed;
+}
+
+/* Stile del select per il filtro */
+select {
+  margin: 5%;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  border: 1px solid #ddd;
+}
+
+/* Drawer stile */
+.drawer {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 90%; /* Imposta la larghezza del drawer al 90% */
+  background-color: #1c1c1e;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(100%);
+  z-index: 1000;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.drawer.open {
+  transform: translateX(0);
+}
+
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.drawer-header h3 {
+  margin: 0;
+  color: white;
+}
+
+.drawer-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+.drawer-content input,
+.drawer-content textarea,
+.drawer-content select {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.drawer-content textarea {
+  height: 200px; /* Altezza predefinita per la textarea */
+}
+
+.drawer-content button {
+  padding: 10px;
+  background-color: #3d348b;
+  border-radius: 5px;
+}
+
+.drawer-content button:hover {
+  background-color: #7678ed;
+}
+
+/* Media Query per schermi medi */
+@media (max-width: 1024px) {
+  .note-list {
+    grid-template-columns: repeat(auto-fill, minmax(40%, 2fr));
+  }
+}
+
+/* Media Query per schermi piccoli */
+@media (max-width: 768px) {
+  .note-list {
+    grid-template-columns: repeat(auto-fill, minmax(40%, 1fr)); /* Più adattabile su schermi piccoli */
+    max-width: 100%;
+  }
+
+  .note {
+    width: 100%;
+  }
+}
+
+  .note {
+    width: 100%;
+  }

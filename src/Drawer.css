@@ -1,0 +1,62 @@
+/* Drawer.css */
+.drawer {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 80%;
+    max-width: 400px;
+    background-color: #1C1C1E;
+    box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(100%);
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 1000;
+  }
+  
+  .drawer.open {
+    transform: translateX(0);
+  }
+  
+  .drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .drawer-content input,
+  .drawer-content textarea,
+  .drawer-content select {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background-color: #2C2C2E;
+    color: white;
+    font-size: 1rem;
+  }
+  
+  .drawer-content button {
+    width: 100%;
+    background-color: #007AFF;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .drawer-content button:hover {
+    background-color: #005BB5;
+  }
+  
+  .drawer-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
