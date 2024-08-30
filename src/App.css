@@ -109,8 +109,6 @@ form {
   height: 100%;
   box-sizing: border-box;
   display: flex;
-  max-width: 85%;
-
   flex-direction: column;
   border: 1px solid #C1B299;
 }
@@ -151,7 +149,7 @@ label {
 .color-picker {
   display: flex;
   margin: 10px 0;
-  gap: 50px;
+  gap: 10px;
   align-items: center;
 }
 
