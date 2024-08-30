@@ -1,7 +1,7 @@
 /* Stile generale */
 body {
-  font-family: 'Georgia', serif; /* Font serif per un look più classico */
-  background-color: #DBBEA1; /* Colore di sfondo che ricorda la carta ingiallita */
+  font-family: 'Roboto', sans-serif; /* Font sans-serif per un look più moderno */
+  background-color: #f7f7f7; /* Colore di sfondo chiaro e neutro */
   margin: 0;
   padding: 0;
 }
@@ -9,17 +9,19 @@ body {
 /* Container principale */
 .App {
   padding: 20px;
-  background-color: #dacec2;
+  background-color: #ffffff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: 20px; /* Bordo arrotondato per un look moderno */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* Ombra leggera per effetto di profondità */
 }
 
 /* Note list container */
 .note-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(20%, 3fr)); /* Griglia flessibile */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Griglia con colonne flessibili */
   gap: 20px;
   width: 100%;
   max-width: 1200px;
@@ -28,16 +30,14 @@ body {
 }
 
 /* Stile per ogni nota */
-
-/* Stile per ogni nota */
 .note {
-  background-color: #daccbe; /* Colore carta Moleskine */
-  border-radius: 5px;
+  background-color: #ffffff; /* Colore di sfondo neutro */
+  border-radius: 15px; /* Bordi molto arrotondati */
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* Ombra leggera */
   box-sizing: border-box;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  border: 1px solid #C1B299;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  border: none;
   overflow-wrap: break-word;
   word-wrap: break-word;
   word-break: break-word;
@@ -45,84 +45,84 @@ body {
   white-space: pre-wrap;
 }
 
-/* Stile per testo scuro su sfondi chiari */
 .note.light-bg {
-  background-color: #daccbe;
-  color: #343131; /* Testo scuro */
+  background-color: #f0f0f0;
+  color: #333333; /* Testo scuro */
 }
 
-/* Stile per testo chiaro su sfondi scuri */
 .note.dark-bg {
-  background-color: #3E3D3A;
-  color: #f5f5f5; /* Testo chiaro */
+  background-color: #333333;
+  color: #f0f0f0; /* Testo chiaro */
 }
 
 .note h3 {
   font-size: 1.5rem;
   margin: 0 0 10px 0;
-  font-weight: normal;
+  font-weight: 500;
 }
 
 .note p {
-  font-size: 0.9rem;
+  font-size: 1rem;
   margin: 5px 0;
 }
 
 /* Bottoni generici */
 button {
-  background-color: #3E3D3A;
+  background-color: #007BFF;
   color: white;
   border: none;
   padding: 10px 20px;
-  border-radius: 2px; /* Riduzione del raggio del bordo per un aspetto più classico */
-  font-size: 0.9rem;
+  border-radius: 30px; /* Bordo molto arrotondato */
+  font-size: 1rem;
   cursor: pointer;
   margin-right: 10px;
   margin-top: 10px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
   align-self: baseline;
 }
 
 button:hover {
-  background-color: #575551;
+  background-color: #0056b3;
+  transform: translateY(-2px); /* Leggero spostamento verso l'alto per feedback visivo */
 }
 
 button[type="submit"] {
   width: 100%;
-  background-color: #6B5B3D;
+  background-color: #007BFF;
   padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 0.9rem;
+  border-radius: 30px;
+  font-size: 1rem;
 }
 
 button[type="submit"]:hover {
-  background-color: #d1ba8a;
+  background-color: #515be6;
 }
 
 /* Form */
 form {
-  background-color: #c3b59e;
+  background-color: #ffffff;
   padding: 20px;
-  border-radius: 3px;
+  border-radius: 15px;
   margin-bottom: 10px;
   width: 100%;
   height: 100%;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  border: 1px solid #C1B299;
+  border: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 /* Stile per input e textarea */
 .note-input, textarea {
   width: 100%;
   padding: 12px;
-  border: 1px solid #dfceb2;
-  border-radius: 5px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
   margin-bottom: 10px;
   font-size: 1rem;
-  background-color: #e9decd;
-  color: #3E3D3A;
+  background-color: #f7f7f7;
+  color: #333333;
   box-sizing: border-box;
 }
 
@@ -134,13 +134,13 @@ textarea {
 /* Placeholder */
 input::placeholder,
 textarea::placeholder {
-  color: #8E8E93;
-  font-style: italic; /* Testo in corsivo per effetto scritto a mano */
+  color: #999999;
+  font-style: normal; /* Testo normale per un aspetto moderno */
 }
 
 /* Label */
 label {
-  color: #3E3D3A;
+  color: #333333;
   margin-left: 10px;
   margin-top: 5%;
 }
@@ -156,14 +156,18 @@ label {
 .color-swatch {
   width: 30px;
   height: 30px;
-  border-radius: 10%;
+  border-radius: 50%; /* Bordo rotondo per le selezioni di colore */
   cursor: pointer;
   border: 2px solid transparent;
-  transition: border 0.3s ease;
+  transition: border 0.3s ease, transform 0.3s ease;
 }
 
 .color-swatch.selected {
-  border: 2px solid #3E3D3A;
+  border: 2px solid #007BFF;
+}
+
+.color-swatch:hover {
+  transform: scale(1.1); /* Ingrandimento leggero al passaggio del mouse */
 }
 
 /* Container per i bottoni di ordinamento e il filtro */
@@ -176,43 +180,41 @@ label {
 }
 
 .sort-buttons button {
-  background-color: #6B5B3D;
+  background-color: #007BFF;
   padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 0.9rem;
+  border-radius: 30px;
+  font-size: 1rem;
 }
 
 .sort-buttons button:hover {
-  background-color: #8B7C5B;
+  background-color: #515be6;
 }
 
 /* Stile del select per il filtro */
 select {
   margin: 5%;
   padding: 10px 20px;
-  border-radius: 10px;
-  font-size: 0.9rem;
-  border: 1px solid #C1B299;
-  background-color: #EDE1C7;
+  border-radius: 30px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
 }
 
 /* Drawer stile */
 .drawer {
-
   box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.4s ease-in-out;
-
   position: fixed;
   right: 0;
   top: 0;
   height: 100%;
   width: 90%;
-  background-color: #dacec2;
-  transition: transform 0.3s ease-in-out;
+  background-color: #ffffff;
   transform: translateX(100%);
   z-index: 1000;
   padding: 20px;
   overflow-y: auto;
+  border-radius: 20px 0 0 20px; /* Bordo arrotondato per il drawer */
 }
 
 .drawer.open {
@@ -228,14 +230,14 @@ select {
 
 .drawer-header h3 {
   margin: 0;
-  color: #3E3D3A;
+  color: #333333;
 }
 
 .drawer-close {
   background: none;
   border: none;
   font-size: 24px;
-  color: #3E3D3A;
+  color: #333333;
   cursor: pointer;
 }
 
@@ -245,8 +247,8 @@ select {
   width: 100%;
   margin-bottom: 10px;
   padding: 10px;
-  border: 1px solid #C1B299;
-  border-radius: 5px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
 }
 
 .drawer-content textarea {
@@ -255,37 +257,32 @@ select {
 
 .drawer-content button {
   padding: 10px;
-  background-color: #6B5B3D;
-  border-radius: 5px;
+  background-color: #007BFF;
+  border-radius: 30px;
 }
 
 .drawer-content button:hover {
-  background-color: #8B7C5B;
+  background-color: #0056b3;
 }
 
 /* Media Query per schermi medi */
 @media (max-width: 1024px) {
   .note-list {
-    grid-template-columns: repeat(auto-fill, minmax(30%, 3fr));
+    grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
   }
 }
 
 @media (max-width: 900px) {
   .note-list {
-    grid-template-columns: repeat(auto-fill, minmax(40%, 2fr));
+    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
   }
 }
-
 
 /* Media Query per schermi piccoli */
 @media (max-width: 768px) {
   .note-list {
-    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
     max-width: 100%;
-  }
-
-  .note {
-    width: 100%;
   }
 }
 
@@ -295,7 +292,7 @@ select {
 
 .note-content h1, .note-content h2, .note-content h3 {
   margin: 0.5em 0;
-  font-family: 'Georgia', serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .note-content ul, .note-content ol {
@@ -303,22 +300,21 @@ select {
 }
 
 .note-content code {
-  background-color: #343131;
-  color: rgb(220, 100, 100);
+  background-color: #e0e0e0;
+  color: #d6336c;
   padding: 0.2em 0.4em;
   border-radius: 4px;
 }
 
 .note-content pre {
-  background-color: #EDE1C7;
+  background-color: #f8f8f8;
   padding: 10px;
-  border-radius: 4px;
+  border-radius: 10px;
   overflow-x: auto;
-  border: 1px solid #C1B299;
+  border: 1px solid #ccc;
 }
 
 .note:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  transform: translateY(-2px);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px); /* Maggiore effetto di sollevamento */
 }

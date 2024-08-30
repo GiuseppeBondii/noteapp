@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 const NoteForm = ({ onSave }) => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
-  const [color, setColor] = useState('#ffffff');
+  const [color, setColor] = useState('#E6E8E6');
   const [category, setCategory] = useState('Lavoro');
 
-  const colors = [ '#9BA2FF', '#6B7FD7','#191716', '#A37B73', '#DBBEA1'];
+  const colors = [ '#080708', '#3772FF','#DF2935', '#FDCA40', '#E6E8E6'];
   const categories = ['Lavoro', 'Personale', 'Studio', 'Altro'];
 
   const handleSubmit = (e) => {
