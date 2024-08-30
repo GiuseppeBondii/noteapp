@@ -82,6 +82,7 @@ const App = () => {
     setIsDrawerOpen(false);
     setCurrentNote(null);
   };
+  
 
   return (
     <div className="App">

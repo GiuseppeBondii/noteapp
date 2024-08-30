@@ -1,7 +1,7 @@
 /* Stile generale */
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #EDEDED;
+  font-family: 'Georgia', serif; /* Font serif per un look più classico */
+  background-color: #DBBEA1; /* Colore di sfondo che ricorda la carta ingiallita */
   margin: 0;
   padding: 0;
 }
@@ -9,7 +9,7 @@ body {
 /* Container principale */
 .App {
   padding: 20px;
-  background-color: #EDEDED;
+  background-color: #dacec2;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -19,7 +19,7 @@ body {
 /* Note list container */
 .note-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(20%, 3fr)); /* Griglia più flessibile */
+  grid-template-columns: repeat(auto-fill, minmax(20%, 3fr)); /* Griglia flessibile */
   gap: 20px;
   width: 100%;
   max-width: 1200px;
@@ -28,18 +28,39 @@ body {
 }
 
 /* Stile per ogni nota */
+
+/* Stile per ogni nota */
 .note {
-  color: white;
-  border-radius: 20px;
+  background-color: #daccbe; /* Colore carta Moleskine */
+  border-radius: 5px;
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: 1px solid #C1B299;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+  white-space: pre-wrap;
+}
+
+/* Stile per testo scuro su sfondi chiari */
+.note.light-bg {
+  background-color: #daccbe;
+  color: #343131; /* Testo scuro */
+}
+
+/* Stile per testo chiaro su sfondi scuri */
+.note.dark-bg {
+  background-color: #3E3D3A;
+  color: #f5f5f5; /* Testo chiaro */
 }
 
 .note h3 {
   font-size: 1.5rem;
   margin: 0 0 10px 0;
+  font-weight: normal;
 }
 
 .note p {
@@ -49,11 +70,11 @@ body {
 
 /* Bottoni generici */
 button {
-  background-color: #2C2C2E;
+  background-color: #3E3D3A;
   color: white;
   border: none;
   padding: 10px 20px;
-  border-radius: 20px;
+  border-radius: 2px; /* Riduzione del raggio del bordo per un aspetto più classico */
   font-size: 0.9rem;
   cursor: pointer;
   margin-right: 10px;
@@ -63,65 +84,65 @@ button {
 }
 
 button:hover {
-  background-color: #444;
+  background-color: #575551;
 }
 
 button[type="submit"] {
   width: 100%;
-  background-color: #3d348b;
+  background-color: #6B5B3D;
   padding: 10px 20px;
-  border-radius: 20px;
+  border-radius: 5px;
   font-size: 0.9rem;
 }
 
 button[type="submit"]:hover {
-  background-color: #7678ed;
-  padding: 10px 20px;
-  border-radius: 20px;
-  font-size: 0.9rem;
+  background-color: #d1ba8a;
 }
 
 /* Form */
 form {
-  background-color: #1C1C1E;
+  background-color: #c3b59e;
   padding: 20px;
-  border-radius: 20px;
-  margin-bottom: 20px;
+  border-radius: 3px;
+  margin-bottom: 10px;
   width: 100%;
-  height: 100%; /* Fai in modo che il form occupi l'altezza completa */
-  max-width: 600px;
+  height: 100%;
   box-sizing: border-box;
   display: flex;
+  max-width: 85%;
+
   flex-direction: column;
+  border: 1px solid #C1B299;
 }
 
 /* Stile per input e textarea */
 .note-input, textarea {
   width: 100%;
   padding: 12px;
-  border: none;
-  border-radius: 10px;
+  border: 1px solid #dfceb2;
+  border-radius: 5px;
   margin-bottom: 10px;
   font-size: 1rem;
-  background-color: #2C2C2E;
-  color: white;
+  background-color: #e9decd;
+  color: #3E3D3A;
   box-sizing: border-box;
 }
 
 textarea {
-  height: calc(100vh - 300px); /* Altezza dinamica per la textarea */
-  resize: none; /* Impedisce il ridimensionamento manuale della textarea */
+  height: calc(100vh - 300px);
+  resize: none;
 }
 
 /* Placeholder */
 input::placeholder,
 textarea::placeholder {
   color: #8E8E93;
+  font-style: italic; /* Testo in corsivo per effetto scritto a mano */
 }
 
 /* Label */
 label {
-  color: #1C1C1E;
+  color: #3E3D3A;
   margin-left: 10px;
   margin-top: 5%;
 }
@@ -129,21 +150,22 @@ label {
 /* Selettore di colore */
 .color-picker {
   display: flex;
-  gap: 10px;
   margin: 10px 0;
+  gap: 50px;
+  align-items: center;
 }
 
 .color-swatch {
   width: 30px;
   height: 30px;
-  border-radius: 50%;
+  border-radius: 10%;
   cursor: pointer;
   border: 2px solid transparent;
   transition: border 0.3s ease;
 }
 
 .color-swatch.selected {
-  border: 2px solid white;
+  border: 2px solid #3E3D3A;
 }
 
 /* Container per i bottoni di ordinamento e il filtro */
@@ -151,38 +173,43 @@ label {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-left: 20px; /* Spazio per allineare meglio con il filtro */
+  margin-left: 20px;
   margin-bottom: 20px;
 }
 
 .sort-buttons button {
-  background-color: #3d348b;
+  background-color: #6B5B3D;
   padding: 10px 20px;
-  border-radius: 20px;
+  border-radius: 5px;
   font-size: 0.9rem;
 }
 
 .sort-buttons button:hover {
-  background-color: #7678ed;
+  background-color: #8B7C5B;
 }
 
 /* Stile del select per il filtro */
 select {
   margin: 5%;
   padding: 10px 20px;
-  border-radius: 20px;
+  border-radius: 10px;
   font-size: 0.9rem;
-  border: 1px solid #ddd;
+  border: 1px solid #C1B299;
+  background-color: #EDE1C7;
 }
 
 /* Drawer stile */
 .drawer {
+
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease-in-out;
+
   position: fixed;
   right: 0;
   top: 0;
   height: 100%;
-  width: 90%; /* Imposta la larghezza del drawer al 90% */
-  background-color: #1c1c1e;
+  width: 90%;
+  background-color: #dacec2;
   transition: transform 0.3s ease-in-out;
   transform: translateX(100%);
   z-index: 1000;
@@ -203,14 +230,14 @@ select {
 
 .drawer-header h3 {
   margin: 0;
-  color: white;
+  color: #3E3D3A;
 }
 
 .drawer-close {
   background: none;
   border: none;
   font-size: 24px;
-  color: white;
+  color: #3E3D3A;
   cursor: pointer;
 }
 
@@ -220,35 +247,42 @@ select {
   width: 100%;
   margin-bottom: 10px;
   padding: 10px;
-  border: none;
+  border: 1px solid #C1B299;
   border-radius: 5px;
 }
 
 .drawer-content textarea {
-  height: 200px; /* Altezza predefinita per la textarea */
+  height: 200px;
 }
 
 .drawer-content button {
   padding: 10px;
-  background-color: #3d348b;
+  background-color: #6B5B3D;
   border-radius: 5px;
 }
 
 .drawer-content button:hover {
-  background-color: #7678ed;
+  background-color: #8B7C5B;
 }
 
 /* Media Query per schermi medi */
 @media (max-width: 1024px) {
   .note-list {
+    grid-template-columns: repeat(auto-fill, minmax(30%, 3fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .note-list {
     grid-template-columns: repeat(auto-fill, minmax(40%, 2fr));
   }
 }
 
+
 /* Media Query per schermi piccoli */
 @media (max-width: 768px) {
   .note-list {
-    grid-template-columns: repeat(auto-fill, minmax(40%, 1fr)); /* Più adattabile su schermi piccoli */
+    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
     max-width: 100%;
   }
 
@@ -257,28 +291,36 @@ select {
   }
 }
 
-  .note {
-    width: 100%;
-  }
+.note {
+  width: 100%;
+}
 
-  .note-content h1, .note-content h2, .note-content h3 {
-    margin: 0.5em 0;
-  }
-  
-  .note-content ul, .note-content ol {
-    padding-left: 20px;
-  }
-  
-  .note-content code {
-    background-color: #343131;
-    color: rgb(220, 100, 100);
-    padding: 0.2em 0.4em;
-    border-radius: 4px;
-  }
-  
-  .note-content pre {
-    background-color: #f5f5f5;
-    padding: 10px;
-    border-radius: 4px;
-    overflow-x: auto;
-  }
+.note-content h1, .note-content h2, .note-content h3 {
+  margin: 0.5em 0;
+  font-family: 'Georgia', serif;
+}
+
+.note-content ul, .note-content ol {
+  padding-left: 20px;
+}
+
+.note-content code {
+  background-color: #343131;
+  color: rgb(220, 100, 100);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+}
+
+.note-content pre {
+  background-color: #EDE1C7;
+  padding: 10px;
+  border-radius: 4px;
+  overflow-x: auto;
+  border: 1px solid #C1B299;
+}
+
+.note:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}

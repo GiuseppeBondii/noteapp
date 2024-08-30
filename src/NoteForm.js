@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 const NoteForm = ({ onSave }) => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
-  const [color, setColor] = useState('#3d348b');
+  const [color, setColor] = useState('#ffffff');
   const [category, setCategory] = useState('Lavoro');
 
-  const colors = ['#3d348b', '#7678ed', '#f7b801', '#f18701', '#f35b04'];
+  const colors = [ '#9BA2FF', '#6B7FD7','#191716', '#A37B73', '#DBBEA1'];
   const categories = ['Lavoro', 'Personale', 'Studio', 'Altro'];
 
   const handleSubmit = (e) => {
@@ -14,7 +14,7 @@ const NoteForm = ({ onSave }) => {
     onSave({ title, content, color, category });
     setTitle('');
     setContent('');
-    setColor('#3d348b'); 
+    setColor('#ffffff'); 
     setCategory('Lavoro');
   };
 
@@ -44,7 +44,7 @@ const NoteForm = ({ onSave }) => {
           />
         ))}
       </div>
-      <label style={{color:'white'}}>Scegli una categoria:</label>
+      <label>Scegli una categoria:</label>
       <select value={category} onChange={(e) => setCategory(e.target.value)}>
         {categories.map((cat) => (
           <option key={cat} value={cat}>
