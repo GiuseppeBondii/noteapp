@@ -5,7 +5,7 @@ import NoteList from './NoteList';
 import Drawer from './Drawer';
 import './App.css';
 import ToDoList from './ToDoList';
-
+import GIOCOSUDOKU from './GIOCOSUDOKU'
 const App = () => {
   const [notes, setNotes] = useState(() => {
     const savedNotes = localStorage.getItem('notes');
@@ -124,7 +124,7 @@ const App = () => {
       <div>
         <div style={{
           width:'80vw'
-        }} class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        }} class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample1" aria-labelledby="offcanvasExampleLabel">
           <div class="offcanvas-header">
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
@@ -132,8 +132,27 @@ const App = () => {
               <ToDoList/>
           </div>
         </div>
-    </div>
-    </div>
+        </div>
+
+        <div>
+        <div style={{
+          width:'350px'
+        }} class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample2" aria-labelledby="offcanvasExampleLabel">
+          <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel" style={{
+            'font-family': 'Georgia, serif',
+            'font-size':'2rem'
+          }} >Sudoku</h5>
+
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+              <GIOCOSUDOKU/>
+          </div>
+        </div>
+        </div>
+        </div>
+
   );
 };
 

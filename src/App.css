@@ -334,6 +334,8 @@ select {
   width:15vw;
   margin-bottom:20px;
   background-color:#3b45cc;
+  margin-left: 10px;
+
 }
 
 #TODOLISTBTN button:hover{
