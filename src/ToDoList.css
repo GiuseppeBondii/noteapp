@@ -10,11 +10,11 @@
     font-family: 'Georgia', serif;
     text-align: center;
     font-size: 2.5rem;
-    margin-top: 20px;
 }
 
 /* Stile degli elementi della lista */
 .elements {
+    padding: 20px;
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -41,7 +41,7 @@
 }
 
 .linea input {
-    width: 22px;
+    width: 40px;
     height: 22px;
     margin-right: 10px;
     accent-color: #3b45cc;
@@ -56,41 +56,35 @@
 .insert {
     padding-left: 10px;
     padding-right: calc(20vw + 40px);
+    padding-top: 10px;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
     position: fixed;
-    width: 100%;
     bottom: 30px;
 }
 
 .insert form {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
 }
 
 .insert input {
-    width: 100%;
+    margin-right: 20px;
     padding: 12px;
+    width: 350%;
     font-size: 1.1rem;
     border-radius: 20px;
     border: 1px solid #ccc;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     outline: none;
-    transition: box-shadow 0.2s ease;
 }
 
 .insert input:focus {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-#dataEnd {
-    margin-left: 2%;
-    margin-right: 2%;
-    width: 20%;
-}
+
 
 #subm, #elimina {
     padding: 12px;

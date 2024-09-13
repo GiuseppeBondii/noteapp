@@ -114,17 +114,18 @@ function ToDoList() {
     </div>
     <div className='insert'>
         <form onSubmit={handleSubmit}>
-            <input
-                type="text"
-                value={newElem.elem}
-                onChange={handleChange}
-                placeholder="Add a new task"
-            />
+           
             <div style={{
                 display:'flex',
                 'flex-direction':'row',
                 width: '100%'
             }}>
+             <input
+                type="text"
+                value={newElem.elem}
+                onChange={handleChange}
+                placeholder="Add a new task"
+            />
                 <button id='subm' type="submit">+</button>
                 <button id='elimina' onClick={handleClick} >&#128465;</button>
             </div>

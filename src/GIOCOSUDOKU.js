@@ -47,7 +47,8 @@ const CompactSudoku = () => {
   return (
     <div className="container py-4">
       <div className="row justify-content-center mb-4">
-        <div className="col-6">
+      <h1 className='tt'>Sudoku</h1>
+        <div className="col">
           <select 
             value={difficulty} 
             onChange={(e) => setDifficulty(e.target.value)}
