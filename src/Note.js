@@ -28,7 +28,10 @@ const Note = ({ note, onDelete, onDuplicate, onCopy, onEdit }) => {
   const textColor = getContrastingTextColor(note.color);
 
   return (
-    <div className={`note ${note.isDarkBackground ? 'dark-bg' : 'light-bg'}`} style={{ backgroundColor: note.color, color: textColor }}>
+    <div
+      className={`note ${isExpanded ? 'expanded' : ''}`}  // Aggiungi la classe 'expanded' se la nota è espansa
+      style={{ backgroundColor: note.color, color: textColor }}
+    >
       <h3>{note.title}</h3>
       <div className="note-content">
         <ReactMarkdown>{displayContent}</ReactMarkdown>

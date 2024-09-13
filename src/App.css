@@ -34,7 +34,7 @@ body {
 .note {
   background-color: #ffffff; /* Colore di sfondo neutro */
   border-radius: 15px; /* Bordi molto arrotondati */
-  padding: 20px;
+  padding: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* Ombra leggera */
   box-sizing: border-box;
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
@@ -97,7 +97,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: rgb(255, 136, 0);
+  background-color: #ff8800;
 }
 
 /* Form */
@@ -339,4 +339,15 @@ select {
 #TODOLISTBTN button:hover{
   background-color: rgb(255, 136, 0);
 
+}
+
+/* Stile della nota espansa */
+.note.expanded {
+  grid-column: 1 / -1; /* La nota occuperà tutte le colonne disponibili */
+  transition: all 0.3s ease;
+}
+
+/* Transizione fluida per il layout */
+.note {
+  transition: all 0.3s ease; /* Aggiungiamo una transizione per una modifica fluida */
 }

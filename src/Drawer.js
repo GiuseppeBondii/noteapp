@@ -34,7 +34,9 @@ const Drawer = ({ isOpen, note, onClose, onSave }) => {
   return (
     <div className={`drawer ${isOpen ? 'open' : ''}`}>
       <div className="drawer-header">
-        <h3>Modifica Nota</h3>
+        <h3 style={{
+           'font-family': 'Georgia, serif'
+        }}>Modifica Nota</h3>
         <button className="drawer-close" onClick={onClose}>×</button>
       </div>
       <div className="drawer-content">
@@ -51,7 +53,7 @@ const Drawer = ({ isOpen, note, onClose, onSave }) => {
         />
         <label>Scegli un colore:</label>
         <div className="color-picker">
-          {['#080708', '#3772FF','#DF2935', '#FDCA40', '#E6E8E6'].map((col) => (
+          {['#FFFFFF', '#FF8800','#00A676', '#3B45CC', '#D52941'].map((col) => (
             <div
               key={col}
               className={`color-swatch ${col === color ? 'selected' : ''}`}
