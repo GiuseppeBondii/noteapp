@@ -1,0 +1,127 @@
+/* Stile generale */
+.bod {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+.tt {
+    color: #3a3a3a;
+    font-family: 'Georgia', serif;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: 20px;
+}
+
+/* Stile degli elementi della lista */
+.elements {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin:auto;
+    transition: background-color 0.3s ease;
+}
+
+.elements:hover {
+    background-color: #f0f0f0;
+}
+
+.linea p {
+    color: #2c2c2c;
+    font-size: 1rem;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.linea {
+    display: flex;
+    align-items: center;
+}
+
+.linea input {
+    width: 22px;
+    height: 22px;
+    margin-right: 10px;
+    accent-color: #3b45cc;
+}
+
+.linea input:hover {
+    cursor: pointer;
+}
+
+/* Stile per il testo barrato */
+.linea p s {
+    color: #a1a1a1;
+}
+
+/* Stile della sezione di input */
+.insert {
+    padding-left: 10px ;
+    padding-right: calc(20vw + 40px);
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    bottom: 30px;
+}
+
+.insert form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.insert input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    outline: none;
+    transition: box-shadow 0.2s ease;
+}
+
+.insert #dataEnd{
+    margin-left: 2%;
+    margin-right: 2%;
+    width: 20%;
+}
+.insert input:focus {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.insert #subm {
+    background-color: #3b45cc;;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.insert #subm:hover {
+    background-color: rgb(255, 136, 0);
+}
+
+.insert #elimina{
+    padding: 12px;
+    background-color:rgb(255, 136, 0);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.insert #elimina:hover{
+    background-color: #3b45cc;
+}
+

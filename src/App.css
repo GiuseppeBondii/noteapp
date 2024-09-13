@@ -1,3 +1,4 @@
+
 /* Stile generale */
 body {
   font-family: 'Roboto', sans-serif; /* Font sans-serif per un look più moderno */
@@ -56,6 +57,7 @@ body {
 }
 
 .note h3 {
+  font-family: 'Georgia', serif;
   font-size: 1.5rem;
   margin: 0 0 10px 0;
   font-weight: 500;
@@ -68,7 +70,7 @@ body {
 
 /* Bottoni generici */
 button {
-  background-color: #007BFF;
+  background-color: #3b45cc;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -82,20 +84,20 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: rgb(255, 136, 0);
   transform: translateY(-2px); /* Leggero spostamento verso l'alto per feedback visivo */
 }
 
 button[type="submit"] {
   width: 100%;
-  background-color: #007BFF;
+  background-color: #3b45cc;
   padding: 10px 20px;
   border-radius: 30px;
   font-size: 1rem;
 }
 
 button[type="submit"]:hover {
-  background-color: #515be6;
+  background-color: rgb(255, 136, 0);
 }
 
 /* Form */
@@ -116,7 +118,7 @@ form {
 /* Stile per input e textarea */
 .note-input, textarea {
   width: 100%;
-  padding: 12px;
+  padding:15px;
   border: 1px solid #ccc;
   border-radius: 15px;
   margin-bottom: 10px;
@@ -163,7 +165,7 @@ label {
 }
 
 .color-swatch.selected {
-  border: 2px solid #007BFF;
+  border: 2px solid #3b45cc;
 }
 
 .color-swatch:hover {
@@ -180,14 +182,14 @@ label {
 }
 
 .sort-buttons button {
-  background-color: #007BFF;
+  background-color: #3b45cc;
   padding: 10px 20px;
   border-radius: 30px;
   font-size: 1rem;
 }
 
 .sort-buttons button:hover {
-  background-color: #515be6;
+  background-color: rgb(255, 136, 0);
 }
 
 /* Stile del select per il filtro */
@@ -257,12 +259,12 @@ select {
 
 .drawer-content button {
   padding: 10px;
-  background-color: #007BFF;
+  background-color: #3b45cc;
   border-radius: 30px;
 }
 
 .drawer-content button:hover {
-  background-color: #0056b3;
+  background-color: rgb(255, 136, 0);
 }
 
 /* Media Query per schermi medi */
@@ -317,4 +319,24 @@ select {
 .note:hover {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   transform: translateY(-5px); /* Maggiore effetto di sollevamento */
+}
+
+
+#TODOLISTBTN{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#TODOLISTBTN button{
+  padding:6px;
+  height:52px;
+  width:15vw;
+  margin-bottom:20px;
+  background-color:#3b45cc;
+}
+
+#TODOLISTBTN button:hover{
+  background-color: rgb(255, 136, 0);
+
 }

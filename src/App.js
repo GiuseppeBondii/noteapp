@@ -4,6 +4,7 @@ import NoteForm from './NoteForm';
 import NoteList from './NoteList';
 import Drawer from './Drawer';
 import './App.css';
+import ToDoList from './ToDoList';
 
 const App = () => {
   const [notes, setNotes] = useState(() => {
@@ -120,6 +121,18 @@ const App = () => {
         onClose={closeDrawer}
         onSave={saveNote}
       />
+      <div>
+        <div style={{
+          width:'80vw'
+        }} class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+          <div class="offcanvas-header">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+              <ToDoList/>
+          </div>
+        </div>
+    </div>
     </div>
   );
 };

@@ -19,14 +19,21 @@ const NoteForm = ({ onSave }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        placeholder="Titolo"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        className="note-input"
-      />
+    <form  onSubmit={handleSubmit}>
+      <div  id='TODOLISTBTN' >
+        <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"  aria-controls="offcanvasExample" >
+          ToDoList
+        </button>
+        <input
+          type="text"
+          placeholder="Titolo"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          className="note-input"
+
+        /> 
+      </div>
+
       <textarea
         placeholder="Contenuto"
         value={content}
