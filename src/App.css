@@ -118,7 +118,7 @@ form {
 /* Stile per input e textarea */
 .note-input, textarea {
   width: 100%;
-  padding:15px;
+  padding:20px;
   border: 1px solid #ccc;
   border-radius: 15px;
   margin-bottom: 10px;
@@ -329,7 +329,7 @@ select {
 }
 
 #TODOLISTBTN button{
-  padding:6px;
+  padding:3px;
   height:52px;
   width:15vw;
   margin-bottom:20px;
@@ -353,3 +353,4 @@ select {
 .note {
   transition: all 0.3s ease; /* Aggiungiamo una transizione per una modifica fluida */
 }
+

@@ -123,7 +123,8 @@ const App = () => {
       />
       <div>
         <div style={{
-          width:'80vw'
+          width:'90vw',
+          'border-radius':'30px'
         }} class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample1" aria-labelledby="offcanvasExampleLabel">
           <div class="offcanvas-header">
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -136,7 +137,8 @@ const App = () => {
 
         <div>
         <div style={{
-          width:'350px'
+          width:'350px',
+          'border-radius':'30px'
         }} class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample2" aria-labelledby="offcanvasExampleLabel">
           <div class="offcanvas-header">
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>

@@ -57,7 +57,7 @@
     padding-left: 10px;
     padding-right: calc(20vw + 40px);
     padding-top: 10px;
-    width: 100vw;
+    width: 110vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -112,3 +112,14 @@
 #elimina:hover {
     background-color: #3b45cc;
 }
+.offcanvas-header button {
+    position:absolute;
+    top: 40px;
+    right:40px ;
+  }
+  
+
+.offcanvas-header button:hover {
+    background-color: white; 
+  }
+  
