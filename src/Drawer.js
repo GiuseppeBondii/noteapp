@@ -53,7 +53,7 @@ const Drawer = ({ isOpen, note, onClose, onSave }) => {
         />
         <label>Scegli un colore:</label>
         <div className="color-picker">
-          {['#FFFFFF', '#FF8800','#00A676', '#3B45CC', '#D52941'].map((col) => (
+          {['#E6E8E6', '#FF8800','#00A676', '#3B45CC', '#D52941'].map((col) => (
             <div
               key={col}
               className={`color-swatch ${col === color ? 'selected' : ''}`}

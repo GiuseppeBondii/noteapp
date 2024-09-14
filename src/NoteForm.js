@@ -6,7 +6,7 @@ const NoteForm = ({ onSave }) => {
   const [color, setColor] = useState('#E6E8E6');
   const [category, setCategory] = useState('Lavoro');
 
-  const colors = [ '#FFFFFF', '#FF8800','#00A676', '#3B45CC', '#D52941'];
+  const colors = [ '#E6E8E6', '#FF8800','#00A676', '#3B45CC', '#D52941'];
   const categories = ['Lavoro', 'Personale', 'Studio', 'Altro'];
 
   const handleSubmit = (e) => {
@@ -14,7 +14,7 @@ const NoteForm = ({ onSave }) => {
     onSave({ title, content, color, category });
     setTitle('');
     setContent('');
-    setColor('#ffffff'); 
+    setColor('#E6E8E6'); 
     setCategory('Lavoro');
   };
 
